@@ -72,7 +72,7 @@ Leetcode ranks this problem as a medium. I think that is an appropriate rating. 
     
 9. `seen.add(row)`, `seen.add(column)`, `seen.add(block)`: Adds the newly created strings to the `seen` set so that they can be checked against future cells.
     
-10. If all cells are valid, the function returns `True`, indicating a valid Sudoku board.Big O Analysis
+10. If all cells are valid, the function returns `True`, indicating a valid Sudoku board.
     
 
 ### Big O Analysis
