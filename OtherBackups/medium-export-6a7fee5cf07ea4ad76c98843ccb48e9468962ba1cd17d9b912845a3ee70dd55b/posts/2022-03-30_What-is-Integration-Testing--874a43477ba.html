@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>What is Integration Testing?</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">What is Integration Testing?</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Integration Testing is a method of software testing where modules are connected and tested as a larger group.
+</section>
+<section data-field="body" class="e-content">
+<section name="5d7e" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="3cde" id="3cde" class="graf graf--h3 graf--leading graf--title">What is Integration Testing?</h3><h4 name="0f62" id="0f62" class="graf graf--h4 graf-after--h3 graf--subtitle">Integration Testing is a method of software testing where modules are connected and tested as a larger group.</h4><figure name="57f4" id="57f4" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*CPZ2ZqqUmrxadGGp" data-width="1200" data-height="630" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*CPZ2ZqqUmrxadGGp"></figure><h3 name="abc7" id="abc7" class="graf graf--h3 graf-after--figure">Background</h3><p name="c8db" id="c8db" class="graf graf--p graf-after--h3"><a href="https://en.wikipedia.org/wiki/Integration_testing" data-href="https://en.wikipedia.org/wiki/Integration_testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Integration testing</a>, also known as integration and testing, is the next step up from <a href="https://blog.seancoughlin.me/what-is-a-unit-test" data-href="https://blog.seancoughlin.me/what-is-a-unit-test" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">unit testing</a>.</p><p name="6517" id="6517" class="graf graf--p graf-after--p">In unit testing, individual chunks of software are verified. Whereas, integration testing checks multiple components for correctness.</p><p name="5948" id="5948" class="graf graf--p graf-after--p">The goal of integration testing is to confirm software works in a group.</p><p name="f93d" id="f93d" class="graf graf--p graf-after--p">Integration testing makes common use of <a href="https://www.geeksforgeeks.org/difference-between-stubs-and-drivers/" data-href="https://www.geeksforgeeks.org/difference-between-stubs-and-drivers/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">stubs and drives</a>.</p><ul class="postList"><li name="0cb7" id="0cb7" class="graf graf--li graf-after--p">A stub is a <em class="markup--em markup--li-em">fake called program</em>, it allows for the testing of the program calling the stub.</li><li name="810b" id="810b" class="graf graf--li graf-after--li">A driver is a <em class="markup--em markup--li-em">fake caller program</em>, it allows for the testing of the program called by the driver.</li></ul><h3 name="18ce" id="18ce" class="graf graf--h3 graf-after--li">Approaches to Integration Testing</h3><p name="7cd2" id="7cd2" class="graf graf--p graf-after--h3">There are <a href="https://www.geeksforgeeks.org/software-engineering-integration-testing/" data-href="https://www.geeksforgeeks.org/software-engineering-integration-testing/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">four main approaches to integration testing</a>.</p><ul class="postList"><li name="822b" id="822b" class="graf graf--li graf-after--p">Big-bang: all the software modules are created and combined at once.</li><li name="6c19" id="6c19" class="graf graf--li graf-after--li"><a href="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming" data-href="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Bottom-up</a>: low-level components are tested by using drivers before high-level components.</li><li name="a0a6" id="a0a6" class="graf graf--li graf-after--li"><a href="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming" data-href="https://en.wikipedia.org/wiki/Top-down_and_bottom-up_design#Programming" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">Top-down</a>: first high-level modules are tested by using stubs before low-level components.</li><li name="d6f4" id="d6f4" class="graf graf--li graf-after--li">Mix-integration (aka sandwich testing): a combination of the bottom-up and top-down approaches.</li></ul><h3 name="dc40" id="dc40" class="graf graf--h3 graf-after--li">Advantage</h3><ul class="postList"><li name="079c" id="079c" class="graf graf--li graf-after--h3">Integration testing is an important way of verifying that larger chunks of code and services work together as intended.</li></ul><h3 name="ef6e" id="ef6e" class="graf graf--h3 graf-after--li">Disadvantage</h3><ul class="postList"><li name="d2af" id="d2af" class="graf graf--li graf-after--h3">Integration testing often requires a significant amount of extra code in the form of stubs and drivers to be written.</li></ul><h3 name="0dae" id="0dae" class="graf graf--h3 graf-after--li">Further Reading</h3><p name="8f95" id="8f95" class="graf graf--p graf-after--h3 graf--trailing">Integration tests are just one kind of testing. <a href="https://blog.seancoughlin.me/series/software-testing" data-href="https://blog.seancoughlin.me/series/software-testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">My series on software testing and its methods</a> covers many other testing variations.</p></div></div></section><section name="8795" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="07a9" id="07a9" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/what-is-integration-testing" data-href="https://blog.seancoughlin.me/what-is-integration-testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/874a43477ba"><time class="dt-published" datetime="2022-03-30T00:59:50.896Z">March 30, 2022</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/what-is-integration-testing-874a43477ba" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 7, 2024.</p></footer></article></body></html>

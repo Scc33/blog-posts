@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>How to Find First and Last Position of Element in Sorted Array</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">How to Find First and Last Position of Element in Sorted Array</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Mastering Binary Search: Efficiently Find the Starting and Ending Position of a Target Value in a Sorted Array with O(log n) Complexity
+</section>
+<section data-field="body" class="e-content">
+<section name="1fd7" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2a49" id="2a49" class="graf graf--h3 graf--leading graf--title">How to Find First and Last Position of Element in Sorted Array</h3><h4 name="5fe3" id="5fe3" class="graf graf--h4 graf-after--h3 graf--subtitle">Mastering Binary Search: Efficiently Find the Starting and Ending Position of a Target Value in a Sorted Array with O(log n) Complexity</h4><figure name="534a" id="534a" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*gjUy-he6SJU_IeQ_" data-width="1200" data-height="630" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*gjUy-he6SJU_IeQ_"></figure><h3 name="2e99" id="2e99" class="graf graf--h3 graf-after--figure">The Problem</h3><p name="908e" id="908e" class="graf graf--p graf-after--h3">With this article, I will be covering the <a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" data-href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Find First and Last Position of an Element in a Sorted Array problem</a>.</p><p name="18e1" id="18e1" class="graf graf--p graf-after--p">Leetcode describes the problem with the following:</p><blockquote name="a276" id="a276" class="graf graf--blockquote graf-after--p"><em class="markup--em markup--blockquote-em">Given an array of integers </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">nums</em></code><em class="markup--em markup--blockquote-em"> sorted in non-decreasing order, find the starting and ending position of a given </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">target</em></code><em class="markup--em markup--blockquote-em"> value.</em></blockquote><blockquote name="0b5c" id="0b5c" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">If </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">target</em></code><em class="markup--em markup--blockquote-em"> is not found in the array, return </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">[-1, -1]</em></code><em class="markup--em markup--blockquote-em">.</em></blockquote><blockquote name="b728" id="b728" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">You must write an algorithm with </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">O(log n)</em></code><em class="markup--em markup--blockquote-em"> runtime complexity.</em></blockquote><p name="124c" id="124c" class="graf graf--p graf-after--blockquote">Example:</p><blockquote name="edb2" id="edb2" class="graf graf--blockquote graf-after--p"><em class="markup--em markup--blockquote-em">Input: nums = [5,7,7,8,8,10], target = 8</em></blockquote><blockquote name="faa0" id="faa0" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">Output: [3,4]</em></blockquote><p name="ffb4" id="ffb4" class="graf graf--p graf-after--blockquote">Leetcode ranks this problem as a medium. I think that is an appropriate rating. The solution is feasible but does require some algorithmic understanding.</p><h4 name="d608" id="d608" class="graf graf--h4 graf-after--p">Naive Approach and Its Limitations</h4><p name="3ce8" id="3ce8" class="graf graf--p graf-after--h4">The naive approach for solving this problem would be to scan through the array linearly to find the first and last occurrence of the target value. This involves looping through the array once to find the first occurrence of the target and marking that index as the starting position, then looping through it again to find the last occurrence and marking that as the ending position.</p><p name="f329" id="f329" class="graf graf--p graf-after--p">While this approach works, it takes <code class="markup--code markup--p-code">O(n)</code> time to solve, which doesn&#39;t meet the constraint of <code class="markup--code markup--p-code">O(log n)</code> runtime complexity. Therefore, it would become inefficient when dealing with large datasets.</p><h3 name="f380" id="f380" class="graf graf--h3 graf-after--p">The Solution</h3><p name="d07c" id="d07c" class="graf graf--p graf-after--h3">To achieve a runtime complexity of <code class="markup--code markup--p-code">O(log n)</code>, we can use <a href="https://en.wikipedia.org/wiki/Binary_search_algorithm" data-href="https://en.wikipedia.org/wiki/Binary_search_algorithm" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">binary search</a>. A binary search is possible because the array is already sorted. In this optimized approach, we will perform two binary searches:</p><ol class="postList"><li name="0599" id="0599" class="graf graf--li graf-after--p"><strong class="markup--strong markup--li-strong">Finding the Leftmost Position</strong>: The first binary search will find the leftmost or the first occurrence of the target value.</li><li name="8db2" id="8db2" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">Finding the Rightmost Position</strong>: The second binary search will find the rightmost or the last occurrence of the target value.</li></ol><p name="878e" id="878e" class="graf graf--p graf-after--li">Here’s how each binary search would work:</p><ol class="postList"><li name="42a8" id="42a8" class="graf graf--li graf-after--p"><strong class="markup--strong markup--li-strong">Leftmost Position</strong>: Initialize <code class="markup--code markup--li-code">left</code> to 0 and <code class="markup--code markup--li-code">right</code> to <code class="markup--code markup--li-code">n - 1</code> (where <code class="markup--code markup--li-code">n</code> is the length of the array). In the while loop, calculate the middle index as <code class="markup--code markup--li-code">(left + right) // 2</code>. If <code class="markup--code markup--li-code">target &gt; nums[mid]</code>, set <code class="markup--code markup--li-code">left = mid + 1</code>. Otherwise, set <code class="markup--code markup--li-code">right = mid - 1</code>. After the loop, check if <code class="markup--code markup--li-code">nums[left]</code> is the target to confirm.</li><li name="9e7c" id="9e7c" class="graf graf--li graf-after--li"><strong class="markup--strong markup--li-strong">Rightmost Position</strong>: Initialize <code class="markup--code markup--li-code">left</code> to 0 and <code class="markup--code markup--li-code">right</code> to <code class="markup--code markup--li-code">n - 1</code> again. This time, if <code class="markup--code markup--li-code">target &gt;= nums[mid]</code>, set <code class="markup--code markup--li-code">left = mid + 1</code>. Otherwise, set <code class="markup--code markup--li-code">right = mid - 1</code>. After the loop, check if <code class="markup--code markup--li-code">nums[right]</code> is the target to confirm.</li><li name="f8c2" id="f8c2" class="graf graf--li graf-after--li">Finally return [-1, -1] if the location of the left and right position overlap.</li></ol><p name="c875" id="c875" class="graf graf--p graf-after--li">Notice that the key difference between the left and right searches is the use of the greater than or equal to check on the right search.</p><h4 name="81e8" id="81e8" class="graf graf--h4 graf-after--p">Time Complexity</h4><p name="bdfc" id="bdfc" class="graf graf--p graf-after--h4">Each binary search has a time complexity of <code class="markup--code markup--p-code">O(log n)</code>, and since we are performing two binary searches, the overall time complexity remains <code class="markup--code markup--p-code">O(log n)</code>.</p><p name="fc93" id="fc93" class="graf graf--p graf-after--p graf--trailing">This optimized approach not only meets the problem’s algorithmic constraint but also efficiently finds the target’s starting and ending positions in the array.</p></div></div></section><section name="0987" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="1e78" id="1e78" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/how-to-find-first-and-last-position-of-element-in-sorted-array" data-href="https://blog.seancoughlin.me/how-to-find-first-and-last-position-of-element-in-sorted-array" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/10d8d1f36649"><time class="dt-published" datetime="2023-09-05T23:29:59.365Z">September 5, 2023</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/how-to-find-first-and-last-position-of-element-in-sorted-array-10d8d1f36649" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 7, 2024.</p></footer></article></body></html>

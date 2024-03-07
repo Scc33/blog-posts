@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Hosting an API with GitHub Pages</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Hosting an API with GitHub Pages</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Building with GitHub Pages is an easy way to release a public JSON API
+</section>
+<section data-field="body" class="e-content">
+<section name="820e" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="129b" id="129b" class="graf graf--h3 graf--leading graf--title">Hosting an API with GitHub Pages</h3><figure name="e59f" id="e59f" class="graf graf--figure graf-after--h3"><img class="graf-image" data-image-id="1*Cd8cI324BoYonSufGvkJHg.png" data-width="1600" data-height="840" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*Cd8cI324BoYonSufGvkJHg.png"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@douglasamarelo?utm_source=Hashnode&amp;utm_medium=referral" data-href="https://unsplash.com/@douglasamarelo?utm_source=Hashnode&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="noopener nofollow noreferrer noopener" target="_blank">Douglas Lopes</a> on <a href="https://unsplash.com/?utm_source=Hashnode&amp;utm_medium=referral" data-href="https://unsplash.com/?utm_source=Hashnode&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="noopener nofollow noreferrer noopener" target="_blank">Unsplash</a></figcaption></figure><h3 name="153e" id="153e" class="graf graf--h3 graf-after--figure">Background</h3><p name="5d84" id="5d84" class="graf graf--p graf-after--h3"><a href="https://pages.github.com/" data-href="https://pages.github.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GitHub Pages</a> is a free website hosting tool provided by GitHub. <a href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" data-href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">I previously wrote about GitHub pages being an excellent place to host a personal website or project page.</a> Additionally, it is a great choice to host a JSON API.</p><p name="a7ed" id="a7ed" class="graf graf--p graf-after--p">An <a href="https://en.wikipedia.org/wiki/API" data-href="https://en.wikipedia.org/wiki/API" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">API</a> is a connection between computers. An example API would be the <a href="https://developer.spotify.com/documentation/web-api/" data-href="https://developer.spotify.com/documentation/web-api/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Spotify API</a> which provides music data.</p><h3 name="f980" id="f980" class="graf graf--h3 graf-after--p">Tutorial</h3><p name="684c" id="684c" class="graf graf--p graf-after--h3">First, you will need to create a special <code class="markup--code markup--p-code">[username].github.io</code> repository. This repository will be home to your GitHub Pages website. The repository name must exactly match the format <code class="markup--code markup--p-code">[username].github.io</code>, otherwise GitHub will not generate a live website.</p><figure name="e6c1" id="e6c1" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*pWRUXSwsMtntvV-dhrOFXQ.png" data-width="1530" data-height="1452" src="https://cdn-images-1.medium.com/max/800/1*pWRUXSwsMtntvV-dhrOFXQ.png"><figcaption class="imageCaption">Creating a <code class="markup--code markup--figure-code">[username].github.io repository</code></figcaption></figure><p name="7e6b" id="7e6b" class="graf graf--p graf-after--figure">I have already made a GitHub Pages repository so the name is taken for me. Your custom <code class="markup--code markup--p-code">[username].github.io</code> will be available.</p><p name="c7a6" id="c7a6" class="graf graf--p graf-after--p">After creating <code class="markup--code markup--p-code">[username].github.io</code> open the terminal, clone the repository, and cd into the directory.</p><pre name="5252" id="5252" class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">git clone https://github.com/Scc33/Scc33.github.io.git<br>cd Scc33.github.io</code></pre><p name="c7c9" id="c7c9" class="graf graf--p graf-after--pre">Inside the repository you can create a <code class="markup--code markup--p-code">.json</code> file. That <code class="markup--code markup--p-code">.json</code> file will become your publicly accessible JSON API.</p><figure name="2e83" id="2e83" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="1*GRTKsNvj5rm7bP2DGP_-SQ.png" data-width="1316" data-height="1836" src="https://cdn-images-1.medium.com/max/800/1*GRTKsNvj5rm7bP2DGP_-SQ.png"><figcaption class="imageCaption">An example JSON</figcaption></figure><p name="199d" id="199d" class="graf graf--p graf-after--figure">After adding a <code class="markup--code markup--p-code">.json</code> file add, commit, and push your changes to GitHub.</p><pre name="79e3" id="79e3" class="graf graf--pre graf-after--p"><code class="markup--code markup--pre-code">git add .<br>git commit -m &quot;Create JSON API&quot;<br>git push -u origin master</code></pre><p name="d79a" id="d79a" class="graf graf--p graf-after--pre">Once you commit and push your changes to the codebase, GitHub will automatically build your changes and publish the code to the internet. It should only take a few minutes for the changes to become visible.</p><p name="d186" id="d186" class="graf graf--p graf-after--p">That’s all it takes! You now have a JSON API for the world to see. Your new JSON API will be located at the URL <code class="markup--code markup--p-code">[username].github.io/[file-name].json</code>. Your API can be seen using any web browser or an API testing tool like <a href="https://www.postman.com/" data-href="https://www.postman.com/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Postman</a>.</p><h3 name="c8dc" id="c8dc" class="graf graf--h3 graf-after--p">Conclusion</h3><p name="929d" id="929d" class="graf graf--p graf-after--h3">GitHub Pages is a great tool for quickly creating a JSON API. In just a few minutes it’s up and running!</p><h3 name="7762" id="7762" class="graf graf--h3 graf-after--p">Pros</h3><ul class="postList"><li name="4460" id="4460" class="graf graf--li graf-after--h3">The entire build process is <a href="https://github.com/features/actions" data-href="https://github.com/features/actions" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">automated</a> and site changes are published to the internet within minutes.</li><li name="729e" id="729e" class="graf graf--li graf-after--li">GitHub Pages supports <a href="https://en.wikipedia.org/wiki/HTTPS" data-href="https://en.wikipedia.org/wiki/HTTPS" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">HTTPS</a> to protect your site and users from malicious tampering.</li><li name="1581" id="1581" class="graf graf--li graf-after--li">Best of all, it’s free!</li></ul><h3 name="12b2" id="12b2" class="graf graf--h3 graf-after--li">Cons</h3><ul class="postList"><li name="4b22" id="4b22" class="graf graf--li graf-after--h3 graf--trailing"><a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits" data-href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages#usage-limits" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">GitHub limits page traffic.</a> Published sites are capped at 1GB in size and there is a 100 GB <em class="markup--em markup--li-em">soft</em> limit on bandwidth per month.</li></ul></div></div></section><section name="8173" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="c7c0" id="c7c0" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" data-href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" class="markup--anchor markup--p-anchor" rel="noopener ugc nofollow noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/b7c3710cf793"><time class="dt-published" datetime="2022-01-16T17:15:09.704Z">January 16, 2022</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/hosting-an-api-with-github-pages-b7c3710cf793" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 7, 2024.</p></footer></article></body></html>
