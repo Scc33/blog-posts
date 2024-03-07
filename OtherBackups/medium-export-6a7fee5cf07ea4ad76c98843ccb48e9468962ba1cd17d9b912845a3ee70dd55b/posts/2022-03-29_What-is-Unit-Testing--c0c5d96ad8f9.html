@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>What is Unit Testing?</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">What is Unit Testing?</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Unit testing is a method of software testing where small, individual chunks of code are verified in isolation.
+</section>
+<section data-field="body" class="e-content">
+<section name="0ab0" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="8b28" id="8b28" class="graf graf--h3 graf--leading graf--title">What is Unit Testing?</h3><h4 name="941e" id="941e" class="graf graf--h4 graf-after--h3 graf--subtitle">Unit testing is a method of software testing where small, individual chunks of code are verified in isolation.</h4><figure name="0fb7" id="0fb7" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*FWiaoCRmL0Vm2o_k" data-width="1200" data-height="630" data-is-featured="true" alt="A gear represents the smallest component like a unit test." src="https://cdn-images-1.medium.com/max/800/0*FWiaoCRmL0Vm2o_k"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@timmossholder?utm_source=Hashnode&amp;utm_medium=referral" data-href="https://unsplash.com/@timmossholder?utm_source=Hashnode&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="noopener nofollow noreferrer noopener" target="_blank">Tim Mossholder</a> on <a href="https://unsplash.com/?utm_source=Hashnode&amp;utm_medium=referral" data-href="https://unsplash.com/?utm_source=Hashnode&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="noopener nofollow noreferrer noopener" target="_blank">Unsplash</a></figcaption></figure><h3 name="eb5f" id="eb5f" class="graf graf--h3 graf-after--figure">Unit Testing Background</h3><p name="2d9f" id="2d9f" class="graf graf--p graf-after--h3"><strong class="markup--strong markup--p-strong">Tl;dr</strong>: a unit test is code that tests other code.</p><p name="9acc" id="9acc" class="graf graf--p graf-after--p"><a href="https://en.wikipedia.org/wiki/Unit_testing" data-href="https://en.wikipedia.org/wiki/Unit_testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Unit tests</a> are the smallest type of software testing. They are meant to verify that a single piece of code is working as intended. Unit testing is typically automated, and developers run tests as part of the development process to make sure everything is working appropriately.</p><p name="a19f" id="a19f" class="graf graf--p graf-after--p">Unit tests are commonly run on every build or change to the codebase.</p><p name="70d1" id="70d1" class="graf graf--p graf-after--p">Unit testing can fall into the category of <a href="https://blog.seancoughlin.me/what-is-tdd" data-href="https://blog.seancoughlin.me/what-is-tdd" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">TDD or test-driven development</a>. TDD is a common method in <a href="https://en.wikipedia.org/wiki/Extreme_programming" data-href="https://en.wikipedia.org/wiki/Extreme_programming" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">extreme programming</a> and <a href="https://en.wikipedia.org/wiki/Agile_software_development" data-href="https://en.wikipedia.org/wiki/Agile_software_development" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">agile</a> where unit tests are written before the code.</p><p name="fc51" id="fc51" class="graf graf--p graf-after--p">Unit tests can sometimes be difficult to write because code often relies on outside components. In these cases, <a href="https://en.wikipedia.org/wiki/Method_stub" data-href="https://en.wikipedia.org/wiki/Method_stub" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">stubbing</a> or <a href="https://en.wikipedia.org/wiki/Mock_object" data-href="https://en.wikipedia.org/wiki/Mock_object" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">mocking</a> are common techniques to implement unit tests.</p><h3 name="906c" id="906c" class="graf graf--h3 graf-after--p">Unit Testing Frameworks</h3><p name="a3c6" id="a3c6" class="graf graf--p graf-after--h3">There are hundreds of testing frameworks in existence because unit testing is so common. Wikipedia maintains a <a href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C++" data-href="https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C++" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">long list of testing frameworks</a> for many languages. Some of the most popular frameworks are <a href="https://en.wikipedia.org/wiki/JUnit" data-href="https://en.wikipedia.org/wiki/JUnit" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Junit</a> for Java, <a href="https://en.wikipedia.org/wiki/Mocha_%28JavaScript_framework%29" data-href="https://en.wikipedia.org/wiki/Mocha_(JavaScript_framework)" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Mocha</a> for JavaScript, and <a href="https://docs.pytest.org/en/7.1.x/" data-href="https://docs.pytest.org/en/7.1.x/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">PyTest</a> for Python.</p><h3 name="cc67" id="cc67" class="graf graf--h3 graf-after--p">Advantages</h3><ul class="postList"><li name="54fa" id="54fa" class="graf graf--li graf-after--h3">Unit tests are small and typically quick to run. The speed makes them easier to check and hastens development.</li><li name="6b69" id="6b69" class="graf graf--li graf-after--li">Unit testing can be helpful documentation because it shows how the code is properly used and can give insight into functionality.</li><li name="304f" id="304f" class="graf graf--li graf-after--li">Developers can use unit tests as a helpful sanity check to make sure their code is working as intended and under many scenarios.</li></ul><h3 name="00ee" id="00ee" class="graf graf--h3 graf-after--li">Disadvantages</h3><ul class="postList"><li name="610f" id="610f" class="graf graf--li graf-after--h3">Since unit tests are checking only small chunks of code, they cannot catch large errors that exist on the system level. Other testing methods like <a href="https://en.wikipedia.org/wiki/Integration_testing" data-href="https://en.wikipedia.org/wiki/Integration_testing" class="markup--anchor markup--li-anchor" rel="noopener" target="_blank">integration tests</a> are required for verifying the system behavior.</li><li name="75d5" id="75d5" class="graf graf--li graf-after--li">Writing and maintaining unit tests can often be difficult because developers are focused on writing deliverable code for customers.</li><li name="ef55" id="ef55" class="graf graf--li graf-after--li">Unit tests, like all testing, may not cover every edge case or may be incorrect. Therefore, relying too heavily on unit tests creates a false sense of security that the code is working as intended.</li></ul><h3 name="0b08" id="0b08" class="graf graf--h3 graf-after--li">Further Reading</h3><p name="c36c" id="c36c" class="graf graf--p graf-after--h3 graf--trailing">Unit tests are just the first level of testing. More types of testing can be read about in <a href="https://blog.seancoughlin.me/series/software-testing" data-href="https://blog.seancoughlin.me/series/software-testing" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">my series on software testing and its methods</a>.</p></div></div></section><section name="44a7" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="3d48" id="3d48" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/what-is-a-unit-test" data-href="https://blog.seancoughlin.me/what-is-a-unit-test" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/c0c5d96ad8f9"><time class="dt-published" datetime="2022-03-29T02:44:20.507Z">March 29, 2022</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/what-is-unit-testing-c0c5d96ad8f9" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 7, 2024.</p></footer></article></body></html>
