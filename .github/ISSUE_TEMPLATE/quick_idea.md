@@ -1,5 +1,5 @@
 ---
-name: Idea
+name: Quick Idea
 about: Suggest a quick idea for the blog
 title: "[Quick Idea]"
 labels: idea
