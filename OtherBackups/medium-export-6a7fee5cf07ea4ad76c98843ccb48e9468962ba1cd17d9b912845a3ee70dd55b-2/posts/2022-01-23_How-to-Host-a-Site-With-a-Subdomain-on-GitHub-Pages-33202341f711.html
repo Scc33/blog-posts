@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>How to Host a Site With a Subdomain on GitHub Pages</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">How to Host a Site With a Subdomain on GitHub Pages</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Create a subdomain for your custom website located on GitHub Pages
+</section>
+<section data-field="body" class="e-content">
+<section name="21d3" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="7f49" id="7f49" class="graf graf--h3 graf--leading graf--title">How to Host a Site With a Subdomain on GitHub Pages</h3><h4 name="84a7" id="84a7" class="graf graf--h4 graf-after--h3 graf--subtitle">Create a subdomain for your custom website located on GitHub Pages</h4><figure name="bb43" id="bb43" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*4Lix6WMgkSPCQ0wh" data-width="5848" data-height="3899" data-unsplash-photo-id="hGV2TfOh0ns" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*4Lix6WMgkSPCQ0wh"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@domenicoloia?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/@domenicoloia?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-creator noopener" target="_blank">Domenico Loia</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-source noopener" target="_blank">Unsplash</a></figcaption></figure><h3 name="9c72" id="9c72" class="graf graf--h3 graf-after--figure">Subdomain Background</h3><p name="41ea" id="41ea" class="graf graf--p graf-after--h3">Have you ever noticed some websites <a href="http://www.seancoughlin.me" data-href="http://www.seancoughlin.me" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">www.seancoughlin.me</a>, <a href="https://link.seancoughlin.me" data-href="https://link.seancoughlin.me" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">link.seancoughlin.me</a>, or <a href="https://blog.seancoughlin.me" data-href="https://blog.seancoughlin.me" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">blog.seancoughlin.me</a> have extra text at the front? The first bit of all of these is called a <strong class="markup--strong markup--p-strong">subdomain</strong>. <a href="https://en.wikipedia.org/wiki/Subdomain" data-href="https://en.wikipedia.org/wiki/Subdomain" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Subdomains</a> are domains that are a part of other domain names. They can be helpful ways of organizing sites and are easier to remember for users.</p><p name="5091" id="5091" class="graf graf--p graf-after--p">GitHub Pages has great support for free website hosting but creates new pages as <code class="markup--code markup--p-code">[username].github.io/example-page</code> by default. Subdomains are a great way to make the URL easier to understand.</p><h3 name="c2ee" id="c2ee" class="graf graf--h3 graf-after--p">GitHub Pages Subdomain Tutorial</h3><p name="4ca2" id="4ca2" class="graf graf--p graf-after--h3"><em class="markup--em markup--p-em">Note: this tutorial assumes you already have a custom domain setup.</em> Check <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" data-href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GitHub Pages documentation</a> to setup your custom subdomain.</p><p name="b497" id="b497" class="graf graf--p graf-after--p">First, open your domain name provider and add a <a href="https://en.wikipedia.org/wiki/CNAME_record" data-href="https://en.wikipedia.org/wiki/CNAME_record" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">CNAME record</a>. A CNAME is an alias for another URL. In the CNAME, add your desired subdomain as the host and <code class="markup--code markup--p-code">[username].github.io.</code> as the target. Note the <em class="markup--em markup--p-em">extra dot</em> after the end of io. For this tutorial, <a href="https://www.namecheap.com" data-href="https://www.namecheap.com" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Namecheap</a> was my domain name registrar. Creating a CNAME record will look different depending on your domain name provider.</p><figure name="8267" id="8267" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*D58hEKpzFnm9wddT" data-width="1118" data-height="60" src="https://cdn-images-1.medium.com/max/800/0*D58hEKpzFnm9wddT"><figcaption class="imageCaption">A Namecheap CNAME record</figcaption></figure><p name="03d1" id="03d1" class="graf graf--p graf-after--figure">You will be able to see the new subdomain propagate across the world with a tool like <a href="https://www.whatsmydns.net" data-href="https://www.whatsmydns.net" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">whatsmydns.net</a>.</p><figure name="4fe2" id="4fe2" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*PNQVCcyeRvRN8YZl" data-width="1138" data-height="1626" src="https://cdn-images-1.medium.com/max/800/0*PNQVCcyeRvRN8YZl"><figcaption class="imageCaption">DNS propagation needs to happen before GitHub Pages can update to the subdomain</figcaption></figure><p name="1081" id="1081" class="graf graf--p graf-after--figure">We now need to tell GitHub to host our site at the subdomain we just created. Open the repository you would like to host at a subdomain and head to the Pages tab in settings. Select your source branch and type your subdomain in the custom domain field.</p><figure name="f80d" id="f80d" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*qW1dx57XyhxORRjo" data-width="628" data-height="1336" src="https://cdn-images-1.medium.com/max/800/0*qW1dx57XyhxORRjo"><figcaption class="imageCaption">GitHub Pages Settings</figcaption></figure><p name="e870" id="e870" class="graf graf--p graf-after--figure">Initially, GitHub Pages will throw an error saying the domain name is “improperly configured.” This error should resolve itself after a few minutes as the DNS records update. If the error doesn’t go away, try editing the custom domain, clicking save, then reverting to your desired custom subdomain. Editing the custom domain will trigger GitHub Pages to recheck the DNS records.</p><figure name="e194" id="e194" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*PqOWA4VznJZi98ZQ" data-width="1574" data-height="1258" src="https://cdn-images-1.medium.com/max/800/0*PqOWA4VznJZi98ZQ"><figcaption class="imageCaption">Waiting on GitHub Pages to sync with DNS records</figcaption></figure><p name="0c59" id="0c59" class="graf graf--p graf-after--figure">Once GitHub Pages has verified the DNS records, the website will be live at an HTTP link. Now Pages will automatically certify the site to create a secure HTTPS version. The process completes after a few minutes.</p><figure name="bb57" id="bb57" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*d-c6L6lHlK_mTiLa" data-width="1566" data-height="254" src="https://cdn-images-1.medium.com/max/800/0*d-c6L6lHlK_mTiLa"><figcaption class="imageCaption">Verifying website for HTTPS</figcaption></figure><figure name="b60b" id="b60b" class="graf graf--figure graf-after--figure"><img class="graf-image" data-image-id="1*56AV2COusF4vQNa_diSG1Q.jpeg" data-width="1354" data-height="382" src="https://cdn-images-1.medium.com/max/800/1*56AV2COusF4vQNa_diSG1Q.jpeg"><figcaption class="imageCaption">Custom subdomain live at HTTPS</figcaption></figure><p name="3c28" id="3c28" class="graf graf--p graf-after--figure">That’s it! Your Pages site is hosted at your custom subdomain.</p><figure name="905d" id="905d" class="graf graf--figure graf-after--p graf--trailing"><img class="graf-image" data-image-id="0*jj_8a1KTAekwazKI" data-width="5188" data-height="3524" data-unsplash-photo-id="3YSGBYZMvcs" src="https://cdn-images-1.medium.com/max/800/0*jj_8a1KTAekwazKI"><figcaption class="imageCaption">Photo by <a href="https://unsplash.com/@pattib?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com/@pattib?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-creator noopener" target="_blank">Patti Black</a> on <a href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" data-href="https://unsplash.com?utm_source=medium&amp;utm_medium=referral" class="markup--anchor markup--figure-anchor" rel="photo-source noopener" target="_blank">Unsplash</a></figcaption></figure></div></div></section><section name="9103" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="c5a3" id="c5a3" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/how-to-host-a-site-with-a-subdomain-on-github-pages" data-href="https://blog.seancoughlin.me/how-to-host-a-site-with-a-subdomain-on-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/33202341f711"><time class="dt-published" datetime="2022-01-23T20:33:48.785Z">January 23, 2022</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/how-to-host-a-site-with-a-subdomain-on-github-pages-33202341f711" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 13, 2024.</p></footer></article></body></html>

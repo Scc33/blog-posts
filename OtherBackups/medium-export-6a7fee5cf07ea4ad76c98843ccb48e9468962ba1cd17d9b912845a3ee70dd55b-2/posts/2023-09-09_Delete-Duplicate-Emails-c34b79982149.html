@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Delete Duplicate Emails</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Delete Duplicate Emails</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Eliminating Duplicate Emails Efficiently: A Comprehensive Guide to Data Cleanup Using Pandas and SQL
+</section>
+<section data-field="body" class="e-content">
+<section name="2bd3" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="34bd" id="34bd" class="graf graf--h3 graf--leading graf--title">Delete Duplicate Emails</h3><h4 name="362c" id="362c" class="graf graf--h4 graf-after--h3 graf--subtitle">Eliminating Duplicate Emails Efficiently: A Comprehensive Guide to Data Cleanup Using Pandas and SQL</h4><figure name="97d7" id="97d7" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*vu5eU599OYCOXm2K" data-width="1200" data-height="630" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*vu5eU599OYCOXm2K"></figure><h3 name="ef88" id="ef88" class="graf graf--h3 graf-after--figure">The Problem</h3><p name="4006" id="4006" class="graf graf--p graf-after--h3">With this article, I will be covering the <a href="https://leetcode.com/problems/delete-duplicate-emails/" data-href="https://leetcode.com/problems/delete-duplicate-emails/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">delete duplicate emails Leetcode problem</a>.</p><p name="20d4" id="20d4" class="graf graf--p graf-after--p">Leetcode describes this problem as easy. That’s a super reasonable evaluation as the solution requires only basic SQL or Pandas knowledge.</p><p name="9bee" id="9bee" class="graf graf--p graf-after--p">The problem description is as follows:</p><blockquote name="eac9" id="eac9" class="graf graf--blockquote graf-after--p"><em class="markup--em markup--blockquote-em">Write a solution to </em><strong class="markup--strong markup--blockquote-strong"><em class="markup--em markup--blockquote-em">delete</em></strong><em class="markup--em markup--blockquote-em"> all duplicate emails, keeping only one unique email with the smallest </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">id</em></code><em class="markup--em markup--blockquote-em">.</em></blockquote><blockquote name="8161" id="8161" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">For SQL users, please note that you are supposed to write a </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">DELETE</em></code><em class="markup--em markup--blockquote-em"> statement and not a </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">SELECT</em></code><em class="markup--em markup--blockquote-em"> one.</em></blockquote><blockquote name="3c32" id="3c32" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">For Pandas users, please note that you are supposed to modify </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">Person</em></code><em class="markup--em markup--blockquote-em"> in place.</em></blockquote><blockquote name="26c6" id="26c6" class="graf graf--blockquote graf-after--blockquote"><em class="markup--em markup--blockquote-em">After running your script, the answer shown is the </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">Person</em></code><em class="markup--em markup--blockquote-em"> table. The driver will first compile and run your piece of code and then show the </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">Person</em></code><em class="markup--em markup--blockquote-em"> table. The final order of the </em><code class="markup--code markup--blockquote-code"><em class="markup--em markup--blockquote-em">Person</em></code><em class="markup--em markup--blockquote-em"> table </em><strong class="markup--strong markup--blockquote-strong"><em class="markup--em markup--blockquote-em">does not matter</em></strong><em class="markup--em markup--blockquote-em">.</em></blockquote><blockquote name="3df9" id="3df9" class="graf graf--blockquote graf-after--blockquote">+ — — — — — — -+ — — — — -+<br>| Column Name | Type |<br>+ — — — — — — -+ — — — — -+<br>| id | int |<br>| email | varchar |<br>+ — — — — — — -+ — — — — -+<br>id is the primary key (column with unique values) for this table.<br>Each row of this table contains an email. <br>The emails will not contain uppercase letters.</blockquote><h3 name="8941" id="8941" class="graf graf--h3 graf-after--blockquote">The Solution</h3><h4 name="589a" id="589a" class="graf graf--h4 graf-after--h3">Pandas</h4><p name="8c14" id="8c14" class="graf graf--p graf-after--h4"><a href="https://en.wikipedia.org/wiki/Pandas_%28software%29" data-href="https://en.wikipedia.org/wiki/Pandas_(software)" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Pandas</a> is a great Python tool for data analysis and manipulation. Built into that library is the <a href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" data-href="https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.drop_duplicates.html" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">drop duplicates</a> function. Please note that the problem statement asks us to do this <a href="https://en.wikipedia.org/wiki/In-place_algorithm" data-href="https://en.wikipedia.org/wiki/In-place_algorithm" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">in place</a>.</p><p name="ff8b" id="ff8b" class="graf graf--p graf-after--p">Using the Pandas library this can be achieved by first in-place sorting by the <code class="markup--code markup--p-code">id</code> field and then dropping the duplicates from <code class="markup--code markup--p-code">email</code>. We want to keep at least the first duplicated element.</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="python" name="9b0e" id="9b0e" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-keyword">def</span> <span class="hljs-title function_">delete_duplicate_emails</span>(<span class="hljs-params">person: pd.DataFrame</span>) -&gt; <span class="hljs-literal">None</span>: <br />  person.sort_values(by=<span class="hljs-string">&#x27;id&#x27;</span>, inplace=<span class="hljs-literal">True</span>) <br />  person.drop_duplicates(subset=<span class="hljs-string">&#x27;email&#x27;</span>, keep=<span class="hljs-string">&#x27;first&#x27;</span>, inplace=<span class="hljs-literal">True</span>)</span></pre><p name="d989" id="d989" class="graf graf--p graf-after--pre">Voila! I love these simple questions.</p><h4 name="8cee" id="8cee" class="graf graf--h4 graf-after--p">SQL</h4><p name="8f4d" id="8f4d" class="graf graf--p graf-after--h4">In SQL we want to run a delete query. We will grab two copies of the <code class="markup--code markup--p-code">person</code> table and match them based on the <code class="markup--code markup--p-code">email</code>. To keep at least one of the solutions we only delete the entry with the higher <code class="markup--code markup--p-code">id</code> value. This keeps the <code class="markup--code markup--p-code">email</code> associated with the smallest <code class="markup--code markup--p-code">id</code>.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="sql" name="8b5e" id="8b5e" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-keyword">DELETE</span> p1 <span class="hljs-keyword">FROM</span> person p1, person p2 <br /><span class="hljs-keyword">WHERE</span> p1.email <span class="hljs-operator">=</span> p2.email <br /><span class="hljs-keyword">AND</span> p1.id <span class="hljs-operator">&gt;</span> p2.id;</span></pre><p name="bf1f" id="bf1f" class="graf graf--p graf-after--pre graf--trailing">As with many problems, there are multiple ways to solve them. These Pandas and SQL solutions are but one way of approaching the delete duplicate question.</p></div></div></section><section name="185f" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="1a30" id="1a30" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/delete-duplicate-emails" data-href="https://blog.seancoughlin.me/delete-duplicate-emails" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/c34b79982149"><time class="dt-published" datetime="2023-09-09T19:48:24.537Z">September 9, 2023</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/delete-duplicate-emails-c34b79982149" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 13, 2024.</p></footer></article></body></html>

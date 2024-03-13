@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Deploying to GitHub Pages using gh-pages</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Deploying to GitHub Pages using gh-pages</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Effortlessly Deploy Your Static Websites to GitHub Pages with the gh-pages NPM Package.
+</section>
+<section data-field="body" class="e-content">
+<section name="d7d8" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="2efd" id="2efd" class="graf graf--h3 graf--leading graf--title">Deploying to GitHub Pages using gh-pages</h3><h4 name="ad4b" id="ad4b" class="graf graf--h4 graf-after--h3 graf--subtitle">Effortlessly Deploy Your Static Websites to GitHub Pages with the gh-pages NPM Package.</h4><figure name="f95b" id="f95b" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="1*U1HJp_dvRoPxbsF29GEFnA.png" data-width="1032" data-height="554" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/1*U1HJp_dvRoPxbsF29GEFnA.png"><figcaption class="imageCaption">gh-pages scripts</figcaption></figure><h3 name="05e9" id="05e9" class="graf graf--h3 graf-after--figure">What is GitHub Pages?</h3><p name="4bf9" id="4bf9" class="graf graf--p graf-after--h3"><a href="https://pages.github.com" data-href="https://pages.github.com" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">GitHub Pages</a> is a static site hosting service offered by GitHub that takes files straight from a repository on GitHub and publishes them as a website. It’s designed to host your personal, organizational, or project pages directly from a GitHub repository. GitHub Pages supports static HTML, CSS, and JavaScript files, as well as Jekyll, a static site generator that converts Markdown files to HTML. The service is commonly used to host personal portfolios, project landing pages, documentation, and blogs, offering a simple way to turn code repositories into publicly accessible websites.</p><h3 name="0e5b" id="0e5b" class="graf graf--h3 graf-after--p">What is gh-pages?</h3><p name="3d53" id="3d53" class="graf graf--p graf-after--h3"><code class="markup--code markup--p-code"><a href="https://github.com/tschaub/gh-pages" data-href="https://github.com/tschaub/gh-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">gh-pages</a></code>is a Node.js package that provides a simple command-line utility for publishing files to a GitHub Pages branch in your repository. It automates the process of pushing your static assets to the <code class="markup--code markup--p-code">gh-pages</code> branch of your GitHub repository, which is then automatically published by GitHub Pages. This package is often used in combination with site generators or build tools to simplify the deployment process for static websites or client-side web apps.</p><p name="b090" id="b090" class="graf graf--p graf-after--p"><code class="markup--code markup--p-code">gh-pages</code> can easily be used to automatically release and deploy any client-side rendered code. React, Angular, Svelte, plain HTML/CSS/Javascript, etc they all work!</p><h3 name="7605" id="7605" class="graf graf--h3 graf-after--p">Using gh-pages</h3><h4 name="01f1" id="01f1" class="graf graf--h4 graf-after--h3">Setup your GitHub Pages Repo</h4><ol class="postList"><li name="31b2" id="31b2" class="graf graf--li graf-after--h4">Open Terminal or Command Line: Navigate to the directory where you want to initialize a new Git repository.</li><li name="4f94" id="4f94" class="graf graf--li graf-after--li">Initialize Git Repository: Run the following command to initialize a new Git repository in that directory:</li></ol><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="6a53" id="6a53" class="graf graf--pre graf-after--li graf--preV2"><span class="pre--content">git init</span></pre><p name="1eab" id="1eab" class="graf graf--p graf-after--pre">This will create a <code class="markup--code markup--p-code">.git</code> directory, signaling that this directory is now under Git version control.</p><p name="4a68" id="4a68" class="graf graf--p graf-after--p">Add Files to the Repository: You can add files to be tracked by Git with the following command:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="743b" id="743b" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">git add .</span></pre><p name="f0e1" id="f0e1" class="graf graf--p graf-after--pre">This will add all the files in the directory to the staging area. Replace the <code class="markup--code markup--p-code">.</code> with specific file names if you don&#39;t want to add all files.</p><p name="6fc6" id="6fc6" class="graf graf--p graf-after--p">Commit Changes: Commit these changes to the repository:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="746d" id="746d" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">git commit -m <span class="hljs-string">&quot;Initial commit&quot;</span></span></pre><p name="0313" id="0313" class="graf graf--p graf-after--pre">This saves your changes locally and prepares them to be pushed to a remote repository.</p><p name="2a20" id="2a20" class="graf graf--p graf-after--p">Create a Remote Repository: If you haven’t already, create a new repository on GitHub. Do not initialize it with README, license, or <code class="markup--code markup--p-code">.gitignore</code> files if you&#39;re planning to push an existing repository.</p><p name="628b" id="628b" class="graf graf--p graf-after--p">Add Remote Repository: Back in your terminal, run the following command to link your local repository to the remote one:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="12b9" id="12b9" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">git remote add origin [Your GitHub Repo URL]</span></pre><p name="92f8" id="92f8" class="graf graf--p graf-after--pre">Replace <code class="markup--code markup--p-code">[Your GitHub Repo URL]</code> with the URL of your new GitHub repository. This sets the remote, so &quot;origin&quot; now refers to the GitHub repository you just created.</p><p name="7a32" id="7a32" class="graf graf--p graf-after--p">Verify Remote: You can verify that the remote URL has been added by running:</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="8827" id="8827" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">git remote -v</span></pre><p name="f8aa" id="f8aa" class="graf graf--p graf-after--pre">This should show the URL of your GitHub repository.</p><h3 name="b2ee" id="b2ee" class="graf graf--h3 graf-after--p">Setup and Configure gh-pages</h3><p name="b3a8" id="b3a8" class="graf graf--p graf-after--h3">Download the gh-pages package: you can use your favorite node package manager for this step. This module requires Git &gt;= 1.9 and Node &gt; 14.</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="6d3a" id="6d3a" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment">#NPM installation</span><br />npm install gh-pages --save-dev<br /><span class="hljs-comment"># YARN install</span><br />yarn add gh-pages --dev</span></pre><p name="4b62" id="4b62" class="graf graf--p graf-after--pre">Update your <code class="markup--code markup--p-code">package.json</code> scripts: add a <code class="markup--code markup--p-code">predeploy</code> and <code class="markup--code markup--p-code">deploy</code> script. The <code class="markup--code markup--p-code">predeploy</code> setup handles building the static content. The <code class="markup--code markup--p-code">predeploy</code> script will automatically run when the deploy script runs.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="json" name="453a" id="453a" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment">// NPM</span><br /><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br />    <span class="hljs-attr">&quot;predeploy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;npm run build&quot;</span><span class="hljs-punctuation">,</span><br />    <span class="hljs-attr">&quot;deploy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gh-pages -d build&quot;</span><span class="hljs-punctuation">,</span><br /><span class="hljs-punctuation">}</span><br /><span class="hljs-comment">// YARN</span><br /><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span><br />    <span class="hljs-attr">&quot;predeploy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;yarn run build&quot;</span><span class="hljs-punctuation">,</span><br />    <span class="hljs-attr">&quot;deploy&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;gh-pages -d build&quot;</span><span class="hljs-punctuation">,</span><br /><span class="hljs-punctuation">}</span></span></pre><p name="ba57" id="ba57" class="graf graf--p graf-after--pre">Push the app to the GitHub repository: once again you can use your favorite package manager tool.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="bash" name="ec00" id="ec00" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment">#NPM</span><br />npm run deploy<br /><span class="hljs-comment"># YARN</span><br />yarn run deploy</span></pre><p name="e0ed" id="e0ed" class="graf graf--p graf-after--pre">Check the GitHub repo to make sure the code was pushed to remote: gh-pages should have pushed the code to a branch named <code class="markup--code markup--p-code">gh-pages</code>.</p><h4 name="8347" id="8347" class="graf graf--h4 graf-after--p">Configure GitHub Pages</h4><p name="e9cd" id="e9cd" class="graf graf--p graf-after--h4">Navigate to the GitHub Pages on the GitHub repository site</p><p name="1414" id="1414" class="graf graf--p graf-after--p">Configure the <code class="markup--code markup--p-code">Build and deployment</code> settings.</p><ol class="postList"><li name="4d13" id="4d13" class="graf graf--li graf-after--p">Source: <code class="markup--code markup--li-code">Deploy from a branch</code></li><li name="27fb" id="27fb" class="graf graf--li graf-after--li">Branch: <code class="markup--code markup--li-code">gh-pages</code> and <code class="markup--code markup--li-code">/(root)</code></li></ol><figure name="b4e1" id="b4e1" class="graf graf--figure graf-after--li"><img class="graf-image" data-image-id="0*XkDA_Ur3LXsnFUB6" data-width="934" data-height="582" src="https://cdn-images-1.medium.com/max/800/0*XkDA_Ur3LXsnFUB6"></figure><p name="8d59" id="8d59" class="graf graf--p graf-after--figure">I’ve previously written about Github Pages configurations in one of my <a href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" data-href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">very first blog posts</a>. Feel free to check that out to learn more.</p><p name="26ea" id="26ea" class="graf graf--p graf-after--p graf--trailing">That’s all! GitHub Actions should automatically use these configurations to take your site live to the internet.</p></div></div></section><section name="6b03" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="1e89" id="1e89" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/deploying-to-github-pages-using-gh-pages" data-href="https://blog.seancoughlin.me/deploying-to-github-pages-using-gh-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/16c9fb4d6017"><time class="dt-published" datetime="2023-10-07T19:33:57.306Z">October 7, 2023</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/deploying-to-github-pages-using-gh-pages-16c9fb4d6017" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 13, 2024.</p></footer></article></body></html>

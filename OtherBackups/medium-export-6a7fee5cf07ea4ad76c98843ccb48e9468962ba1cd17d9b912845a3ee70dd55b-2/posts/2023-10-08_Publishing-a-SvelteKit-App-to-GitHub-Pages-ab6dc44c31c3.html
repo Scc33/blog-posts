@@ -1,0 +1,72 @@
+<!DOCTYPE html><html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>Publishing a SvelteKit App to GitHub Pages</title><style>
+      * {
+        font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+      }
+      html, body {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
+        font-size: 50px;
+        margin-bottom: 17px;
+        color: #333;
+      }
+      h2 {
+        font-size: 24px;
+        line-height: 1.6;
+        margin: 30px 0 0 0;
+        margin-bottom: 18px;
+        margin-top: 33px;
+        color: #333;
+      }
+      h3 {
+        font-size: 30px;
+        margin: 10px 0 20px 0;
+        color: #333;
+      }
+      header {
+        width: 640px;
+        margin: auto;
+      }
+      section {
+        width: 640px;
+        margin: auto;
+      }
+      section p {
+        margin-bottom: 27px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #333;
+      }
+      section img {
+        max-width: 640px;
+      }
+      footer {
+        padding: 0 20px;
+        margin: 50px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+      .aspectRatioPlaceholder {
+        max-width: auto !important;
+        max-height: auto !important;
+      }
+      .aspectRatioPlaceholder-fill {
+        padding-bottom: 0 !important;
+      }
+      header,
+      section[data-field=subtitle],
+      section[data-field=description] {
+        display: none;
+      }
+      </style></head><body><article class="h-entry">
+<header>
+<h1 class="p-name">Publishing a SvelteKit App to GitHub Pages</h1>
+</header>
+<section data-field="subtitle" class="p-summary">
+Learn the step-by-step guide to effortlessly deploy your SvelteKit application to GitHub Pages and make your web project accessible to the…
+</section>
+<section data-field="body" class="e-content">
+<section name="a3d9" class="section section--body section--first"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><h3 name="edcb" id="edcb" class="graf graf--h3 graf--leading graf--title">Publishing a SvelteKit App to GitHub Pages</h3><h4 name="8082" id="8082" class="graf graf--h4 graf-after--h3 graf--subtitle">Learn the step-by-step guide to effortlessly deploy your SvelteKit application to GitHub Pages and make your web project accessible to the world.</h4><figure name="453e" id="453e" class="graf graf--figure graf-after--h4"><img class="graf-image" data-image-id="0*51Ued6EY2v4JsoZZ" data-width="864" data-height="207" data-is-featured="true" src="https://cdn-images-1.medium.com/max/800/0*51Ued6EY2v4JsoZZ"></figure><h3 name="aaeb" id="aaeb" class="graf graf--h3 graf-after--figure">What is SvelteKit?</h3><p name="d051" id="d051" class="graf graf--p graf-after--h3"><a href="https://kit.svelte.dev/docs/introduction" data-href="https://kit.svelte.dev/docs/introduction" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">SvelteKit</a> is a framework for building web applications that are built on top of Svelte, a modern JavaScript UI library. Unlike traditional frameworks that operate mainly on the client side, SvelteKit provides a unified approach to building apps that can be rendered on the server, statically generated at build time, or even rendered client-side. It comes with built-in features like routing, layouts, and server-side rendering (SSR), making it a comprehensive solution for building everything from small, static websites to large, complex web applications. With a focus on performance and a simplified developer experience, SvelteKit aims to streamline the process of building robust and scalable web apps.</p><h3 name="61c5" id="61c5" class="graf graf--h3 graf-after--p">Build a SvelteKit App!</h3><p name="7bca" id="7bca" class="graf graf--p graf-after--h3">This tutorial just spells out how to configure and deploy a SvelteKit web app to GitHub Pages. If you never have created a Svelte application before, the <a href="https://kit.svelte.dev/docs/creating-a-project" data-href="https://kit.svelte.dev/docs/creating-a-project" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">docs</a> are great!</p><h3 name="6c0c" id="6c0c" class="graf graf--h3 graf-after--p">Configuring SvelteKit for GitHub Pages</h3><p name="37a7" id="37a7" class="graf graf--p graf-after--h3">Build your application using Svelte and SvelteKit.</p><p name="e124" id="e124" class="graf graf--p graf-after--p">GitHub Pages is a static site host. Therefore, we need to install the <a href="https://kit.svelte.dev/docs/adapters" data-href="https://kit.svelte.dev/docs/adapters" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Svelte static site adapter</a>.</p><pre data-code-block-mode="2" spellcheck="false" data-code-block-lang="bash" name="cae3" id="cae3" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-comment"># NPM install</span><br />npm i -D @sveltejs/adapter-static<br /><span class="hljs-comment"># YARN install</span><br />yarn add @sveltejs/adapter-static --dev</span></pre><p name="5747" id="5747" class="graf graf--p graf-after--pre">After installing the static adapter, at that to your <code class="markup--code markup--p-code">svelte.config.js</code>.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="javascript" name="d8dd" id="d8dd" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-keyword">import</span> adapter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sveltejs/adapter-static&#x27;</span>;<br /><span class="hljs-keyword">import</span> { vitePreprocess } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sveltejs/kit/vite&#x27;</span>;<br /><br /><span class="hljs-comment">/** <span class="hljs-doctag">@type</span> {<span class="hljs-type">import(&#x27;@sveltejs/kit&#x27;).Config</span>} */</span><br /><span class="hljs-keyword">const</span> config = {<br />    <span class="hljs-attr">kit</span>: {<br />        <span class="hljs-attr">appDir</span>: <span class="hljs-string">&#x27;app&#x27;</span>, <span class="hljs-comment">// Required as the default is _app</span><br />        <span class="hljs-attr">adapter</span>: <span class="hljs-title function_">adapter</span>()<br />    },<br />    <span class="hljs-attr">preprocess</span>: <span class="hljs-title function_">vitePreprocess</span>()<br />};<br /><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> config;</span></pre><p name="8e51" id="8e51" class="graf graf--p graf-after--pre">Add an app directory output to the <code class="markup--code markup--p-code">svelte.config.js</code>. The typical output is <code class="markup--code markup--p-code">_app</code>so I think something like <code class="markup--code markup--p-code">app</code> makes sense but this can be anything without an underscore. GitHub Pages cannot serve content from directories with special characters like underscores.</p><p name="1aba" id="1aba" class="graf graf--p graf-after--p">If you are deployed to <code class="markup--code markup--p-code">https://[username].github.io</code> step 2 is all that is required for configuration. If you are deploying to <code class="markup--code markup--p-code">https://[username].github.io/your-repo-name</code> you will need to supply a <code class="markup--code markup--p-code">paths.base</code>. See the <a href="https://kit.svelte.dev/docs/adapter-static#github-pages" data-href="https://kit.svelte.dev/docs/adapter-static#github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">SvelteKit docs</a> for more details.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="php" name="3b2d" id="3b2d" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content">import adapter <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;@sveltejs/adapter-static&#x27;</span>;<br /><br /><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">dev</span> = process.argv.<span class="hljs-title function_ invoke__">includes</span>(<span class="hljs-string">&#x27;dev&#x27;</span>);<br /><br /><span class="hljs-comment">/** <span class="hljs-doctag">@type</span> {import(&#x27;<span class="hljs-doctag">@sveltejs</span>/kit&#x27;).Config} */</span><br /><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">config</span> = {<br />    kit: {<br />        adapter: <span class="hljs-title function_ invoke__">adapter</span>(),<br />        paths: {<br />            base: dev ? <span class="hljs-string">&#x27;&#x27;</span> : process.env.BASE_PATH,<br />        }<br />    }<br />};</span></pre><p name="522b" id="522b" class="graf graf--p graf-after--pre">Add an empty <code class="markup--code markup--p-code">.nojekyll</code> file in your <code class="markup--code markup--p-code">static</code> folder to prevent GitHub Pages provided Jekyll configurations from managing the site.</p><figure name="5511" id="5511" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*IjZnezqo7EVpEExG" data-width="490" data-height="180" src="https://cdn-images-1.medium.com/max/800/0*IjZnezqo7EVpEExG"></figure><p name="c401" id="c401" class="graf graf--p graf-after--figure">Manually build and push your output directory to GitHub or use a tool like <a href="https://blog.seancoughlin.me/deploying-to-github-pages-using-gh-pages" data-href="https://blog.seancoughlin.me/deploying-to-github-pages-using-gh-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">gh-pages</a>.</p><pre data-code-block-mode="1" spellcheck="false" data-code-block-lang="json" name="7a8d" id="7a8d" class="graf graf--pre graf-after--p graf--preV2"><span class="pre--content"><span class="hljs-attr">&quot;scripts&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">{</span>      <br />  <span class="hljs-attr">&quot;build&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;vite build&quot;</span>  <br /><span class="hljs-punctuation">}</span></span></pre><p name="75a7" id="75a7" class="graf graf--p graf-after--pre">Configure GitHub pages to <a href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" data-href="https://blog.seancoughlin.me/building-a-personal-website-with-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">deploy your app with the repo settings</a>.</p><figure name="e54f" id="e54f" class="graf graf--figure graf-after--p"><img class="graf-image" data-image-id="0*voGc9773AfaQVcTL" data-width="934" data-height="582" src="https://cdn-images-1.medium.com/max/800/0*voGc9773AfaQVcTL"></figure><p name="b4ea" id="b4ea" class="graf graf--p graf-after--figure graf--trailing">And that is it! You should be good to go and see your site live! This is how I deploy my personal site <a href="https://seancoughlin.me/" data-href="https://seancoughlin.me/" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">seancoughlin.me</a>. If you want to check out a code example you can find that in my <a href="https://github.com/Scc33/Scc33.github.io" data-href="https://github.com/Scc33/Scc33.github.io" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank">Git repo</a>.</p></div></div></section><section name="0931" class="section section--body section--last"><div class="section-divider"><hr class="section-divider"></div><div class="section-content"><div class="section-inner sectionLayout--insetColumn"><p name="e03d" id="e03d" class="graf graf--p graf--leading graf--trailing"><em class="markup--em markup--p-em">Originally published at </em><a href="https://blog.seancoughlin.me/publishing-a-sveltekit-app-to-github-pages" data-href="https://blog.seancoughlin.me/publishing-a-sveltekit-app-to-github-pages" class="markup--anchor markup--p-anchor" rel="noopener" target="_blank"><em class="markup--em markup--p-em">https://blog.seancoughlin.me</em></a><em class="markup--em markup--p-em">.</em></p></div></div></section>
+</section>
+<footer><p>By <a href="https://medium.com/@sean-coughlin" class="p-author h-card">Sean Coughlin</a> on <a href="https://medium.com/p/ab6dc44c31c3"><time class="dt-published" datetime="2023-10-08T14:19:57.833Z">October 8, 2023</time></a>.</p><p><a href="https://medium.com/@sean-coughlin/publishing-a-sveltekit-app-to-github-pages-ab6dc44c31c3" class="p-canonical">Canonical link</a></p><p>Exported from <a href="https://medium.com">Medium</a> on March 13, 2024.</p></footer></article></body></html>
