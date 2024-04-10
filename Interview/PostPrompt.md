@@ -23,4 +23,7 @@ I want you to respond with any questions if you need further clarifications. Tha
 
 :)
 
-Here are additional details about the problem: 
+Following are additional details about the problem.
+LeetCode Title:
+LeetCode Description:
+Example solution:
