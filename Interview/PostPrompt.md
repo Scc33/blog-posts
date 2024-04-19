@@ -12,9 +12,9 @@ In the post I would like you to cover five main categories (including a brief in
 1. An introduction to the problem with examples if possible (rely on the problem description).
 2a. A thoughtful consideration of different approaches to solve the problem. 
 2b. A written (English) description of how to solve the problem. Include Big O notation analysis.
-4. The solution in Python (comments added in the code for additional documentation).
-5. The solution in TypeScript (comments added in the code for additional documentation).
-6. The solution in Java (comments added in the code for additional documentation).
+3. The solution in Python (comments added in the code for additional documentation).
+4. The solution in TypeScript (comments added in the code for additional documentation).
+5. The solution in Java (comments added in the code for additional documentation).
 """
 
 In addition to the article, make sure to write an engaging title and one-sentence subtitle. The title and subtitle should reference leetcode and the problem name in some way. They should be written with search engine optimization in mind.
