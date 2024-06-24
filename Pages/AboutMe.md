@@ -1,35 +1,35 @@
-I am a full-stack software engineer! I blog on [Hashnode](https://blog.seancoughlin.me) and [Medium](https://sean-coughlin.medium.com). 
+I am a full-stack software engineer! I blog on [Hashnode](https://blog.seancoughlin.me). 
 
 If you want to connect, reach out to me on [LinkedIn](https://www.linkedin.com/in/sean-m-coughlin/).
 
-Please read on to learn more about me.
+Read on to learn more about me.
 
 ![My initials on a background of Chicago](https://cdn.hashnode.com/res/hashnode/image/upload/v1701049640173/u3BeBo5bb.jpg align="center")
 
 ---
 
-### My development start
+### My Development Journey
 
-My passion for software development ignited in a high school class and has been a guiding light ever since. I learned on a positively ancient program called [Alice](https://en.wikipedia.org/wiki/Alice_(software)) if you can believe it. 
+My passion for software development began in a high school class and has been a guiding light ever since. I started with [Alice](https://en.wikipedia.org/wiki/Alice_(software)), an introductory programming environment.
 
-Regardless of the strange start, the initial spark led me to pursue computer science at the collegiate level and has paved the way for a fulfilling career in the field.
-
----
-
-### My brief career
-
-My programming expertise is a tapestry woven from a rich variety of languages and frameworks, reflecting my versatility and adaptability in the ever-evolving landscape of software development. As a developer, I have delved deeply into Java, Python, C, C++, JavaScript, and Haskell, each language adding a unique dimension to my coding repertoire. 
-
-My proficiency extends to an array of frontend frameworks, including React, Angular, Vue, and Django, where I have adeptly crafted engaging and responsive user interfaces. 
-
-In the realm of backend development, I have dabbled with the Express and Spring Boot frameworks, enabling me to architect robust and scalable server-side applications. 
-
-I don't claim to be an expert in any of these technologies. It takes an entire career to learn any one of these and I am just getting started with my career. However, while I am not an expert, I appreciate that my coding journey has taken me to a variety of technologies. 
-
-I'm honored to have seen some of what the rich software engineering ecosystem has to share. I hope to use this blog to share some of my experiences.
+Despite the unusual start, this initial spark led me to pursue computer science in college, paving the way for a fulfilling career in the field.
 
 ---
 
-### My non-technical passions
+### My Career in a Nutshell
 
-Beyond the confines of technology, I find solace and rejuvenation in a variety of hobbies (really I have way too many hobbies). In my free time I enjoy rock climbing, weight lifting, hiking running, reading whatever I can get my hands on, traveling, gardening, and cooking. I wish I had more free time or more hours in the day, but don't we all.
+My programming expertise spans a diverse array of languages and frameworks, showcasing my versatility and adaptability in the ever-evolving software development landscape. I've delved into Java, Python, C, C++, JavaScript, and Haskell, each adding a unique dimension to my coding skills.
+
+In frontend development, I've crafted engaging user interfaces using frameworks like React, Angular, Vue, and Django. On the backend, I've worked with Express and Spring Boot, enabling me to build robust and scalable server-side applications.
+
+While I don't claim to be an expert in any single technology—it takes a lifetime to master even one—I cherish the breadth of my coding journey and the rich software engineering ecosystem I've explored. Through this blog, I aim to share my experiences and insights.
+
+---
+
+### My Non-Technical Passions
+
+Outside of technology, I have a wide range of hobbies that bring me joy and balance. In my free time, I enjoy rock climbing, weight lifting, hiking, running, reading, traveling, gardening, and cooking. Like many, I wish I had more hours in the day to pursue all my interests, but I make the most of the time I have.
+
+---
+
+Feel free to reach out if you share any of these interests or want to discuss anything related to software development!
