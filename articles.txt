@@ -1,3 +1,7 @@
+Provided documentation: You have been provided a list of titles that have been published to this blog. Generate ideas based on those titles. You can include a related article section that references these when appropriate.
+
+---
+
 building resilient applications with circuit breaker pattern
 
 comparing javascript end to end testing frameworks cypress vs selenium vs playwright
