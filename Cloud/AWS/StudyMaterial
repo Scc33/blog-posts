@@ -1,0 +1,61 @@
+Amazon Forecast,is a fully managed service that uses machine learning to deliver time series forcasts
+Amazon Comprehend,NLP service that analyzes data like emails, tickets, and social medi
+AWS Glue Data Catalog,Apache Hive Metastore - compatible data service
+AWS Glue,serverless data integration service
+AWS Lake Formation,is a service that makes it easy to set up a secure data lake in days. A data lake is a centralized, curated, and secured repository that
+stores all your data, both in its original form and prepared for analysis.
+Data Lake,a storage repository that holds a vast amount of raw data in its original format until the business needs it
+Data Storage Progression,Lake is the largest and long term, Warehouse is middle, Database is the smallest and fastest
+AWS Data Exchange,catalogue for sharing data from third party sources
+Amazon Neptune,graph database that contains other services like Neptune Analytics for running graph analytics and NeptuneML for predictions with graph data
+AWS Audit Manager,audit risk/compliance, supports frameworks like PCI/HIPPA, library of controls
+Amazon DocumentDB,NoSQL document database that is MongoDB compaitble
+Amazon DocumentDB types,Instance based (you manage instances directly), Elastic cluster (auto scales)
+CloudFormation Intrinsic vs Pseudo,Intrinsic are available CloudFormation functions whereas Pseudo are build in parameters
+CloudFormation Pseudo Parameters,built in parameters auto provided by CloudFormation like AWS::AccoundId or AWS::Region
+CDK vs CloudFormation,CDK is imperative and written in code whereas CloudFormation is declarative and describes everything
+CloudFront Signed Cookie vs Signed URL,Signed url takes precedent however signed cookie can be used for when you don't want to change the url
+Lambda and ECR,must implement Lambda runtime API, cannot support multi-architecture container images
+EBS confinement,EBS is locked to an availability zone
+How to auto deploy on AWS,AWS CodeDeploy
+How to manage Lambda Latency bottlenecks?,configure application auto scaling to manage Lambda provisioned concurrency
+CLI --dry-run,checks if you have required permissions for an action
+API Gateway Auth options,- Cognito User Pools
+- IAM Roles & Policies
+- Lambda Authorizer
+S3 Multipart Upload,- improves throughput
+- can pause and resume
+- supports network recovery
+- recommended for large (over 100 MB) uploads
+NAT Gateway,A highly available, managed Network Address Translation (NAT) service for your resources in a private subnet to access the Internet.
+SQS Long vs Short Polling,- Long polling - wait for messages to arrive or timeout before returning
+- Short polling - returns immediately or empty response
+EB All at once deploys,- deploys new app version to all instances at the same time
+- fastest type of Elastic Beanstalk deploy
+- create some amount of downtime
+RCU Strong Consistent,- one strongly consistent read per second
+
+1) round data up to nearest 4
+2) divide by 4
+3) times by # of reads
+S3 Encryption headers,SSE-S3 - x-amz-server-side-encryption
+
+SSE-C
+- x-amz-server-side-encryption-customer_alg
+- x-amz-server-side-encryption
+- x-amz-server-side-encryption-MD5
+When to user IAM roles vs IAM User Credentials,IAM roles
+- resources running in AWS that need programmatic access
+
+User
+- running outside of AWS and always need access to keys
+API Gateway Timeout,29 seconds for REST/HTTP
+- on timeout will return 504 Gateway Timeout error
+KMS Data Encryption Flow,1) GenerateDataKey API call
+2) Use plaintext to encrypt locally and erase plaintext from memory
+3) Store encrypted data key
+S3 Bucket Policy,JSON document that allows for complex access control to buck (think of as IAM for S3)
+App Mesh,fully managed service mesh for microservice communication
+DynamoDB Streams,Lambda function that runs every DynamoDB data modification (update, create, delete)
+DynamoDB Strong vs Eventual Consistency,Eventual - data is returned immediately but can be out of data
+Strong - will read from reader so will always be accurate but has higher latency
