@@ -59,3 +59,81 @@ App Mesh,fully managed service mesh for microservice communication
 DynamoDB Streams,Lambda function that runs every DynamoDB data modification (update, create, delete)
 DynamoDB Strong vs Eventual Consistency,Eventual - data is returned immediately but can be out of data
 Strong - will read from reader so will always be accurate but has higher latency
+DynamoDB LSI vs GSI,- LSI - strong or eventual consistency, created on table initialization
+
+- GSI - can be added any time, eventually consistent, preferred option
+IAM Hierarchy,User
+Group --> User
+Role --> App
+DynamoDB On-demand capacity,- Good for new or unpredictable workloads
+- Default max of 40k RCU/WCU
+DynamoDB Accelerator (DAX),Fully managed in memory write through cache for DynamoDB with eventual consistency
+- Reduces latency
+DyanmoDB Accelerator (DAX) Pros and Cons,Good for
+- fast response times
+- read intensive apps
+- small items accessed a lot
+
+Bad for
+- can't strongly consistently read
+- write intensive apps
+- Consider Elasticache instead for more robustness
+CMK,Customer Master Key
+Use of CMKs,- primary resource of KMS
+- used to encrypt / decrypt data keys not used for data directly)
+Step Functions,- makes it easy to coordinate the components of distributed applications and microservices using visual workflows.
+- are a reliable way to coordinate components and step through the functions of your application.
+Step functions mnemonic,Think of as a flow chart
+Step function use cases,- Manage batch jobs
+- ETL jobs
+- Transfer data records
+- Transcoding
+Step functions purpose,Coordinate workflows into a state machine
+SSE-KMS,*Server Side Encryption at rest with AWS Key Management Service*
+__________ provides an audit trail, so you can see who used your key to access which object and when, as well as view failed attempts to access data from users without permission to decrypt the data.
+SSE-KMS description,Envelope encryption via KMS & you manage the keys
+X-Ray Daemon,- Runs of UDP port 2000
+- Collects data and passes to API
+- Must be installed and can be used on-premises
+SSE-C,*Server Side Encryption at rest with Customer Provided Keys*
+SSE-C Drawbacks,Customer provides key
+- Most private but data is gone if you lose the key
+AWS Secret Manager,Easily rotate & retrieve DB/API/secrets
+- Key value pairs
+- Think of Vault
+RCU Eventual Consistency Algorithm,two eventually consistent reads per second
+1) round data to nearest 4
+2) divide by 4
+3) times by # of reads
+4) divide final number by 2
+5) round up to nearest whole number
+IAM Role,IAM Entity that is very similar to a user, with permission policies that determine what the identity can and cannot do in AWS.
+IAM Entity that does not have any credentials (password or access keys) associated with it.
+IAM Entity that Instead of being uniquely associated with one person, is intended to be assumable by anyone who needs it.
+IAM Role,an identity that you can assume to gain temporary access to permissions
+- Credentials given with STS
+WCU Algorithm,represents one write per second up to 1kB
+
+1) round to nearest 1kB
+2) times by number of writes
+DynamoDB Transactions Properties,-Any scenario question that mentions ACID requirements, think DynamoDB Transactions (DDB-T)
+-DDB-T provide developers with atomicity, consistency, isolation, durability across 1 or more tables within a single AWS account and region
+-All or nothing transactions
+DynamoDB Transactions,Transactions are ACID
+- TransactWriteItems
+- TransactGetItems
+DynamoDB Keys,Partition Key (or HASH)
+Sort key ( or RANGE)
+Simple = partition
+Composite = partition + sort
+STS,Security token service
+STS uses,Provides temporary credentials required to assume IAM role
+EC2 Instance Types,General Purpose
+Compute Optimized
+Memory Optimized
+Accelerated Computing
+Storage Optimized
+Cognito User Pool,Used to connect to identity providers
+- Sign-in, login functionality
+- It's used for people
+- Use for web/mobile apps
