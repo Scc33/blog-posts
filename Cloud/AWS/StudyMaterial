@@ -137,3 +137,28 @@ Cognito User Pool,Used to connect to identity providers
 - Sign-in, login functionality
 - It's used for people
 - Use for web/mobile apps
+CloudFormation deploy failure behavior,- auto rollback to previous successful state
+- deletes any created resources
+ECS Launch Types,- EC2 launch type - you provision and maintain infrastructure and run ECS agent
+- Fargate - AWS runs tasks and scales based on tasks
+SSM Parameter Store,hierarchical storage for configuration (data and secrets management)
+EB Rolling deploys,deploys to batch of instances at a time (takes some out of service)
+ECS Architectures,- EventBridge --> Farget --> S3
+- SQS --> ECS
+- S3 --> EventBridge --> ECS --> DynamoDB
+ECS Data Volumes,- mount EFS onto ECS tasks
+- tasks in any AZ share data
+Kinesis usecases,- for ingesting or loading data streams
+- to process data then use step functions
+AWS CDK,Cloud deployment kit
+- automatically create CloudFormation templates from code
+Kinesis Data Stream Properties,- 1 to 365 day retention
+- Can reprocess/replay data
+- Can delete data in kinesis 
+- Ordering with partition key
+CDK,Modeling architecture as code
+Required S3 SSE Headers,x-amz-server-side-encryption
+- AES256
+- aws:kms
+Lambda utilization,Memory allocation
+- CPU scales automatically with memory allocation
